@@ -1,4 +1,4 @@
-name: 'Learn-Git-Ations'
+name: 'Learn-Git-Actions'
 
 on:
   push:
@@ -15,14 +15,14 @@ jobs:
 
     steps:
       - name: Checkout Code
-        run: actions/checkout@v4
-
+        uses: actions/checkout@v4
+        
       - name: Install Dependency
         run: npm ci
 
       - name: Build
         run: npm run build
 
-      - name: Run
+      - name: Run Application
         run: npm run start -- --host 0.0.0.0
 
