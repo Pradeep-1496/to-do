@@ -16,13 +16,9 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
-        
+
       - name: Install Dependency
         run: npm ci
 
       - name: Build
         run: npm run build
-
-      - name: Run Application
-        run: npm run start -- --host 0.0.0.0
-
