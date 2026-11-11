@@ -1,0 +1,28 @@
+name: 'Learn-Git-Ations'
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        run: actions/checkout@v4
+
+      - name: Install Dependency
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Run
+        run: npm run start -- --host 0.0.0.0
+
